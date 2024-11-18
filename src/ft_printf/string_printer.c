@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   string_printer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpoulain <cpoulain@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:47:55 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/07 17:53:07 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:14:28 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "ft_printf.h"
+#include "libft.h"
 
 // Declare static functions
 
@@ -30,7 +31,7 @@ int	string_printer(t_format *fmt, char *str)
 	len = s_len + fmt->width;
 	if (format_flag_has_left_justify(fmt))
 		putnstr(str, s_len);
-	putnchar(' ', fmt->width);
+	ft_putnchr_fd(1, ' ', fmt->width);
 	if (!format_flag_has_left_justify(fmt))
 		putnstr(str, s_len);
 	return (len);

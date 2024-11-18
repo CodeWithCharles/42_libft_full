@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_putnchr_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpoulain <cpoulain@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 16:33:58 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/08 13:33:21 by cpoulain         ###   ########.fr       */
+/*   Created: 2024/11/18 16:49:52 by cpoulain          #+#    #+#             */
+/*   Updated: 2024/11/18 17:14:35 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "libft.h"
 
-void	putnchar(char c, int count)
+void	ft_putnchr_fd(int fd, char c, int count)
 {
 	while (count--)
-		ft_putchar_fd(c, 1);
-}
-
-int	max(int a, int b)
-{
-	if (a > b)
-		return (a);
-	return (b);
-}
-
-int	min(int a, int b)
-{
-	if (a < b)
-		return (a);
-	return (b);
+		ft_putchar_fd(c, fd);
 }

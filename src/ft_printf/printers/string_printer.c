@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   string_printer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpoulain <cpoulain@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:53:47 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/07 17:58:06 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:52:05 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "ft_printf.h"
+#include "libft.h"
 
 int	_string_printer(va_list *arg_list, t_format *fmt)
 {

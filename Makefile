@@ -1,0 +1,92 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/11/18 16:58:14 by cpoulain          #+#    #+#              #
+#    Updated: 2024/11/18 17:12:59 by cpoulain         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# Commands
+
+RM				=	/usr/bin/rm -f
+ECHO			=	/usr/bin/echo
+
+# Constants
+
+SRC_DIR			:=	src
+INC_DIR			:=	include
+OBJ_DIR			:=	build
+
+TARGET			:=	libftfull.a
+
+CC				:=	cc
+CFLAGS			:=	-Wall -Wextra -Werror
+
+include			Files.mk
+
+# Objs formatter
+
+OBJS			=	$(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(FILES)))
+
+# Terminal colors
+
+TERM_RESET		:=	\033[0m
+TERM_BLACK		:=	\033[30m
+TERM_RED		:=	\033[31m
+TERM_GREEN		:=	\033[32m
+TERM_YELLOW		:=	\033[33m
+TERM_BLUE		:=	\033[34m
+TERM_MAGENTA	:=	\033[35m
+TERM_CYAN		:=	\033[36m
+TERM_WHITE		:=	\033[37m
+
+TERM_UP			:=	\033[1A
+TERM_CLEAR_LINE	:=	\033[2K\r
+
+# Phony rules
+
+.PHONY: all clean fclean re norminette _header _obj_footer _obj_header
+
+all: $(TARGET)
+
+clean:
+	@printf "$(TERM_YELLOW)Removing %d objects from \"%s\" folder...\n$(TERM_RESET)" $(words $(OBJS)) $(OBJ_DIR)
+	@$(RM) -r $(OBJS)
+
+fclean: clean
+	@printf "$(TERM_YELLOW)Removing \"%s\"...\n$(TERM_RESET)" $(TARGET)
+	@$(RM) $(TARGET)
+
+re: fclean all
+
+norminette:
+	@norminette $(SRC_DIR) $(INC_DIR) | grep -Ev '^Notice|OK!$$'	\
+	&& $(ECHO) -e '\033[1;31mNorminette KO!'						\
+	|| $(ECHO) -e '\033[1;32mNorminette OK!'
+
+_header:
+	@printf "$(TERM_GREEN)Welcome to $(TERM_BLUE) \"%s\"$(TERM_GREEN) builder !\n$(TERM_RESET)" $(TARGET)
+
+_obj_header:
+	@printf "$(TERM_MAGENTA)Building objects into \"%s\" folder...\n$(TERM_RESET)" $(OBJ_DIR)
+
+_obj_footer:
+	@printf "$(TERM_UP)$(TERM_CLEAR_LINE)$(TERM_GREEN)Done building $(TERM_BLUE)%d$(TERM_GREEN) object(s) !\n$(TERM_RESET)" $(words $(OBJS))
+
+# Binary / Lib generation
+
+$(TARGET): _header _obj_header $(OBJS) _obj_footer
+	@printf "$(TERM_MAGENTA)Making archive $(TERM_BLUE)\"%s\"$(TERM_MAGENTA)...$(TERM_RESET)" $@
+	@ar -rcs $@ $(OBJS)
+	@cp $(INC_DIR)/libft.h .
+	@printf "$(TERM_CLEAR_LINE)$(TERM_GREEN)Done building archive $(TERM_BLUE)\"%s\"$(TERM_GREEN) !\n$(TERM_RESET)" $@
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@printf "$(TERM_CLEAR_LINE)$(TERM_MAGENTA)Compiling $(TERM_BLUE)\"%s\"$(TERM_MAGENTA)...\n$(TERM_RESET)" $@
+	@mkdir -p $(@D)
+	@$(CC) -c $< -o $@ -I$(INC_DIR) $(CFLAGS)
+	@printf "$(TERM_UP)"

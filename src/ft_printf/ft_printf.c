@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpoulain <cpoulain@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 10:55:25 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/08 12:59:18 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:51:43 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "ft_printf.h"
+#include "libft.h"
 
 // Declare static functions
 

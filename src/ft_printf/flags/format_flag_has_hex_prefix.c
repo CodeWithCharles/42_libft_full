@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   format_flag_has_hex_prefix.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpoulain <cpoulain@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:36:32 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/06 15:14:56 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:52:30 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "ft_printf.h"
+#include "libft.h"
 
 int	format_flag_has_hex_prefix(t_format *fmt)
 {

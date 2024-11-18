@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 16:02:04 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/10/30 12:15:18 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:52:56 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* Includes */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
+#include "libft.h"
 
 /* Static declarations */
 

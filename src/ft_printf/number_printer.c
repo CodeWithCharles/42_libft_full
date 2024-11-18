@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   number_printer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpoulain <cpoulain@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:23:18 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/07 17:53:07 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:14:58 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "ft_printf.h"
+#include "libft.h"
 
 // Declare static functions
 
@@ -69,7 +70,7 @@ static void	print_number(unsigned long n)
 static void	print(t_format *fmt, long n, int pn)
 {
 	if (!format_flag_has_left_justify(fmt))
-		putnchar(' ', fmt->width);
+		ft_putnchr_fd(1, ' ', fmt->width);
 	if (!format_flag_has_force_sign(fmt)
 		&& format_flag_has_align_sign(fmt) && n >= 0)
 		ft_putchar_fd(' ', 1);
@@ -80,9 +81,9 @@ static void	print(t_format *fmt, long n, int pn)
 		n = -n;
 		ft_putchar_fd('-', 1);
 	}
-	putnchar('0', fmt->precision);
+	ft_putnchr_fd(1, '0', fmt->precision);
 	if (pn)
 		print_number((unsigned long) n);
 	if (format_flag_has_left_justify(fmt))
-		putnchar(' ', fmt->width);
+		ft_putnchr_fd(1, ' ', fmt->width);
 }
