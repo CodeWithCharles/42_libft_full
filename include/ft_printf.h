@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 16:01:21 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/18 17:19:18 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/19 09:58:53 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define FT_PRINTF_H
 
 # include "libft.h"
-# include "libs_libft.h"
+
+# include <stdarg.h>
 
 // Define flags' binary values
 

@@ -6,14 +6,18 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 18:31:31 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/18 17:19:31 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/19 09:59:14 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include "libs_libft.h"
+# include <stddef.h>
+# include <stdint.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef unsigned char	t_byte;
 
@@ -61,14 +65,14 @@ void	ft_putnchr_fd(int fd, char c, int count);
 int		max(int a, int b);
 int		min(int a, int b);
 void	ft_strcat(char **dst_ptr, const char *src);
-
+int		ft_isspace(const char c);
 // GNL
 
 char	*get_next_line(int fd);
 
 // ft_printf
 
-int	ft_printf(const char *fmt, ...);
+int		ft_printf(const char *fmt, ...);
 
 // Bonus
 
@@ -81,4 +85,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
 #endif
