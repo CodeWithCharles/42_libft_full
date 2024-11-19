@@ -6,7 +6,7 @@
 #    By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 16:58:14 by cpoulain          #+#    #+#              #
-#    Updated: 2024/11/18 17:12:59 by cpoulain         ###   ########.fr        #
+#    Updated: 2024/11/19 11:59:05 by cpoulain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,9 @@ TARGET			:=	libftfull.a
 
 CC				:=	cc
 CFLAGS			:=	-Wall -Wextra -Werror
+
+TEST_FILE		:=	test.c
+TEST_TARGET		:=	ft_test
 
 include			Files.mk
 
@@ -49,17 +52,26 @@ TERM_CLEAR_LINE	:=	\033[2K\r
 
 # Phony rules
 
-.PHONY: all clean fclean re norminette _header _obj_footer _obj_header
+.PHONY: all clean fclean re norminette _header _obj_footer _obj_header tests
 
 all: $(TARGET)
 
 clean:
-	@printf "$(TERM_YELLOW)Removing %d objects from \"%s\" folder...\n$(TERM_RESET)" $(words $(OBJS)) $(OBJ_DIR)
-	@$(RM) -r $(OBJS)
+	@if [ -e $(OBJ_DIR) ]; then \
+		printf "$(TERM_YELLOW)Removing %d objects from \"%s\" folder...\n$(TERM_RESET)" $(words $(OBJS)) $(OBJ_DIR);\
+		$(RM) -r $(OBJ_DIR);\
+	fi
 
 fclean: clean
-	@printf "$(TERM_YELLOW)Removing \"%s\"...\n$(TERM_RESET)" $(TARGET)
-	@$(RM) $(TARGET)
+	@if [ -e $(TARGET) ]; then \
+		printf "$(TERM_YELLOW)Removing \"%s\" and \"libft.h\"...\n$(TERM_RESET)" $(TARGET);\
+		$(RM) $(TARGET);\
+		$(RM) libft.h;\
+	fi
+	@if [ -e $(TEST_TARGET) ]; then \
+		printf "$(TERM_YELLOW)Removing \"%s\"...\n$(TERM_RESET)" $(TEST_TARGET); \
+		$(RM) $(TEST_TARGET);\
+	fi
 
 re: fclean all
 
@@ -76,6 +88,10 @@ _obj_header:
 
 _obj_footer:
 	@printf "$(TERM_UP)$(TERM_CLEAR_LINE)$(TERM_GREEN)Done building $(TERM_BLUE)%d$(TERM_GREEN) object(s) !\n$(TERM_RESET)" $(words $(OBJS))
+
+tests: all
+	@printf "$(TERM_UP)$(TERM_GREEN)Building test file into \"%s\".\n$(TERM_RESET)" $(TEST_FILE)
+	@sh -c "$(CC) $(OBJS) $(CFLAGS) $(NAME) $(TEST_FILE) -o $(TEST_TARGET) && ./$(TEST_TARGET)"
 
 # Binary / Lib generation
 

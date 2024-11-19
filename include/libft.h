@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 18:31:31 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/19 09:59:14 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/19 10:07:19 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+int		ft_isspace(const char c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -65,7 +66,6 @@ void	ft_putnchr_fd(int fd, char c, int count);
 int		max(int a, int b);
 int		min(int a, int b);
 void	ft_strcat(char **dst_ptr, const char *src);
-int		ft_isspace(const char c);
 // GNL
 
 char	*get_next_line(int fd);
