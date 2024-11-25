@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 10:06:04 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/19 11:12:39 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/25 15:28:25 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	main(void)
 {
-	ft_printf("%s", "Bonzour");
+	ft_printf(2, "%s", "Bonzour");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:47:55 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/25 14:51:12 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/25 14:54:03 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ int	string_printer(t_format *fmt, char *str)
 	fmt->width = max(0, fmt->width - s_len);
 	len = s_len + fmt->width;
 	if (format_flag_has_left_justify(fmt))
-		putnstr(str, s_len);
+		putnstr(str, s_len, fmt->fd);
 	ft_putnchr_fd(fmt->fd, ' ', fmt->width);
 	if (!format_flag_has_left_justify(fmt))
-		putnstr(str, s_len);
+		putnstr(str, s_len, fmt->fd);
 	return (len);
 }
 

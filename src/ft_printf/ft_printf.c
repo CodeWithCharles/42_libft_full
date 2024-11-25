@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 10:55:25 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/25 14:46:40 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/25 14:52:47 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ static int	handle(
 	int				len;
 	const char		*start;
 
-	format->fd = fd;
+	format.fd = fd;
 	if (read_format(&format, fmt_in_ptr))
 	{
 		start = *fmt_in_ptr;

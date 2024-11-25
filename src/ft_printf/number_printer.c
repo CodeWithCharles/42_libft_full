@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:23:18 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/25 14:48:56 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/25 14:53:43 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static void	print(t_format *fmt, long n, int pn)
 	}
 	ft_putnchr_fd(fmt->fd, '0', fmt->precision);
 	if (pn)
-		print_number((unsigned long) n);
+		print_number((unsigned long) n, fmt->fd);
 	if (format_flag_has_left_justify(fmt))
 		ft_putnchr_fd(fmt->fd, ' ', fmt->width);
 }

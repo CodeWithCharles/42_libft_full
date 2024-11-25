@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 16:34:58 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/25 14:49:03 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/25 14:53:26 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ static void	print(t_format *fmt, size_t n, int pn, int is_up)
 		ft_putstr_fd(&charset[sizeof(L_HEX_CHARSET) - 3], fmt->fd);
 	ft_putnchr_fd(fmt->fd, '0', fmt->precision);
 	if (pn)
-		print_hex(charset, n);
+		print_hex(charset, n, fmt->fd);
 	if (format_flag_has_left_justify(fmt))
-		ft_putnchr_fd(fd->fd, ' ', fmt->width);
+		ft_putnchr_fd(fmt->fd, ' ', fmt->width);
 }
