@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:23:18 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/18 17:14:58 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/25 14:48:56 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // Declare static functions
 
 static int	len_n(long n);
-static void	print_number(unsigned long n);
+static void	print_number(unsigned long n, const int fd);
 static void	print(t_format *fmt, long n, int pn);
 
 // Main function
@@ -60,30 +60,30 @@ static int	len_n(long n)
 	return (len);
 }
 
-static void	print_number(unsigned long n)
+static void	print_number(unsigned long n, const int fd)
 {
 	if (n > 9)
-		print_number(n / 10);
-	ft_putchar_fd((n % 10) + '0', 1);
+		print_number(n / 10, fd);
+	ft_putchar_fd((n % 10) + '0', fd);
 }
 
 static void	print(t_format *fmt, long n, int pn)
 {
 	if (!format_flag_has_left_justify(fmt))
-		ft_putnchr_fd(1, ' ', fmt->width);
+		ft_putnchr_fd(fmt->fd, ' ', fmt->width);
 	if (!format_flag_has_force_sign(fmt)
 		&& format_flag_has_align_sign(fmt) && n >= 0)
-		ft_putchar_fd(' ', 1);
+		ft_putchar_fd(' ', fmt->fd);
 	if (format_flag_has_force_sign(fmt) && n >= 0)
-		ft_putchar_fd('+', 1);
+		ft_putchar_fd('+', fmt->fd);
 	if (n < 0)
 	{
 		n = -n;
-		ft_putchar_fd('-', 1);
+		ft_putchar_fd('-', fmt->fd);
 	}
-	ft_putnchr_fd(1, '0', fmt->precision);
+	ft_putnchr_fd(fmt->fd, '0', fmt->precision);
 	if (pn)
 		print_number((unsigned long) n);
 	if (format_flag_has_left_justify(fmt))
-		ft_putnchr_fd(1, ' ', fmt->width);
+		ft_putnchr_fd(fmt->fd, ' ', fmt->width);
 }

@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 10:55:25 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/18 16:51:43 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/25 14:46:40 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 static void	init_printers(
 				t_spec_printer *printers);
 static int	handle(
+				int fd,
 				const char **fmt_in_ptr,
 				va_list *list,
 				t_spec_printer *printers);
@@ -29,12 +30,14 @@ static int	read_format(
 				const char **fmt_in_ptr);
 // Main function
 
-int	ft_printf(const	char *format_in, ...)
+int	ft_printf(int fd, const char *format_in, ...)
 {
 	va_list			args;
 	int				printed_char;
 	t_spec_printer	printers[8];
 
+	if (!fd)
+		fd = 1;
 	printed_char = 0;
 	va_start(args, format_in);
 	init_printers(printers);
@@ -43,10 +46,10 @@ int	ft_printf(const	char *format_in, ...)
 		if (*format_in++ != '%')
 		{
 			++printed_char;
-			ft_putchar_fd(format_in[-1], 1);
+			ft_putchar_fd(format_in[-1], fd);
 			continue ;
 		}
-		printed_char += handle(&format_in, &args, printers);
+		printed_char += handle(fd, &format_in, &args, printers);
 	}
 	va_end(args);
 	return (printed_char);
@@ -67,6 +70,7 @@ static void	init_printers(t_spec_printer *printers)
 }
 
 static int	handle(
+	int fd,
 	const char **fmt_in_ptr,
 	va_list *list,
 	t_spec_printer *printers)
@@ -76,6 +80,7 @@ static int	handle(
 	int				len;
 	const char		*start;
 
+	format->fd = fd;
 	if (read_format(&format, fmt_in_ptr))
 	{
 		start = *fmt_in_ptr;
@@ -83,12 +88,12 @@ static int	handle(
 			--start;
 		len = *fmt_in_ptr - start;
 		while (start < *fmt_in_ptr)
-			ft_putchar_fd(*start++, 1);
+			ft_putchar_fd(*start++, fd);
 		return (len);
 	}
 	if (format.specifier == '%')
 	{
-		ft_putchar_fd('%', 1);
+		ft_putchar_fd('%', fd);
 		return (1);
 	}
 	printer = printers[

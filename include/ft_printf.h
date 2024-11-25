@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 16:01:21 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/19 09:58:53 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/25 14:43:21 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_format
 {
 	int		width;
 	int		precision;
+	int		fd;
 	char	flags;
 	char	specifier;
 }	t_format;

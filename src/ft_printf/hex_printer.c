@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 16:34:58 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/18 17:14:08 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/25 14:49:03 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // Declare static functions
 
 static int	len_hex(size_t n);
-static void	print_hex(const char *charset, size_t n);
+static void	print_hex(const char *charset, size_t n, const int fd);
 static void	print(t_format *fmt, size_t n, int pn, int is_up);
 
 // Main function
@@ -65,11 +65,11 @@ static int	len_hex(size_t n)
 
 // Print n in hexadecimal
 
-static void	print_hex(const char *charset, size_t n)
+static void	print_hex(const char *charset, size_t n, const int fd)
 {
 	if (n > 0xf)
-		print_hex(charset, n >> 4);
-	ft_putchar_fd(charset[n & 0xf], 1);
+		print_hex(charset, n >> 4, fd);
+	ft_putchar_fd(charset[n & 0xf], fd);
 }
 
 static void	print(t_format *fmt, size_t n, int pn, int is_up)
@@ -80,13 +80,13 @@ static void	print(t_format *fmt, size_t n, int pn, int is_up)
 	if (is_up)
 		charset = U_HEX_CHARSET;
 	if (!format_flag_has_left_justify(fmt))
-		ft_putnchr_fd(1, ' ', fmt->width);
+		ft_putnchr_fd(fmt->fd, ' ', fmt->width);
 	if (format_flag_has_hex_prefix(fmt)
 		&& (!format_flag_has_precision(fmt) || fmt ->precision >= 0 || n))
-		ft_putstr_fd(&charset[sizeof(L_HEX_CHARSET) - 3], 1);
-	ft_putnchr_fd(1, '0', fmt->precision);
+		ft_putstr_fd(&charset[sizeof(L_HEX_CHARSET) - 3], fmt->fd);
+	ft_putnchr_fd(fmt->fd, '0', fmt->precision);
 	if (pn)
 		print_hex(charset, n);
 	if (format_flag_has_left_justify(fmt))
-		ft_putnchr_fd(1, ' ', fmt->width);
+		ft_putnchr_fd(fd->fd, ' ', fmt->width);
 }

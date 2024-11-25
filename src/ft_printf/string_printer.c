@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:47:55 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/18 17:14:28 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/25 14:51:12 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 // Declare static functions
 
-static void	putnstr(const char *str, size_t len);
+static void	putnstr(const char *str, size_t len, const int fd);
 
 // Main function
 
@@ -31,7 +31,7 @@ int	string_printer(t_format *fmt, char *str)
 	len = s_len + fmt->width;
 	if (format_flag_has_left_justify(fmt))
 		putnstr(str, s_len);
-	ft_putnchr_fd(1, ' ', fmt->width);
+	ft_putnchr_fd(fmt->fd, ' ', fmt->width);
 	if (!format_flag_has_left_justify(fmt))
 		putnstr(str, s_len);
 	return (len);
@@ -39,8 +39,8 @@ int	string_printer(t_format *fmt, char *str)
 
 // Static function implementations
 
-static void	putnstr(const char *str, size_t len)
+static void	putnstr(const char *str, size_t len, const int fd)
 {
 	while (len--)
-		ft_putchar_fd(*str++, 1);
+		ft_putchar_fd(*str++, fd);
 }
