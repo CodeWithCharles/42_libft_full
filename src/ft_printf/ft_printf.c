@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:31:14 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/25 15:39:01 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/25 15:43:17 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_printf(const char *format_in, ...)
 	int		written;
 
 	va_start(args, format_in);
-	written = ft_printf_base(0, format_in, &args);
+	written = ft_printf_base(1, format_in, &args);
 	va_end(args);
 	return (written);
 }
@@ -30,7 +30,7 @@ int	fd_printf(int fd, const char *format_in, ...)
 	int		written;
 
 	va_start(args, format_in);
-	if (!fd)
+	if (fd <= 0)
 		fd = 1;
 	written = ft_printf_base(fd, format_in, &args);
 	va_end(args);
