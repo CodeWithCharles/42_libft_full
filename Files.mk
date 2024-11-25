@@ -5,7 +5,7 @@ FILES	=																	\
 	ft_printf/flags/format_flag_has_left_justify							\
 	ft_printf/flags/format_flag_has_precision								\
 	ft_printf/flags/format_flag_has_zero_padding ft_printf/ft_printf		\
-	ft_printf/hex_printer ft_printf/number_printer							\
+	ft_printf/ft_printf_base ft_printf/hex_printer ft_printf/number_printer	\
 	ft_printf/printers/char_printer ft_printf/printers/decimal_printer		\
 	ft_printf/printers/integer_printer ft_printf/printers/lo_hex_printer	\
 	ft_printf/printers/pointer_printer ft_printf/printers/string_printer	\

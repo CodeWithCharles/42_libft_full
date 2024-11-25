@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 18:31:31 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/25 14:42:01 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/25 15:39:53 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,9 @@ char	*get_next_line(int fd);
 
 // ft_printf
 
-int		ft_printf(const int fd, const char *fmt, ...);
+int		ft_printf_base(const int fd, const char *fmt, va_list *args);
+int		ft_printf(const char *fmt, ...);
+int		fd_printf(int fd, const char *fmt, ...);
 
 // Bonus
 
