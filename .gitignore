@@ -2,3 +2,4 @@ libftfull.a
 libft.h
 build/
 *.txt
+ft_test
