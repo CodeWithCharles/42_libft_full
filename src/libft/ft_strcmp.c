@@ -6,9 +6,11 @@
 /*   By: cpoulain <cpoulain@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:07:22 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/29 17:09:44 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:13:39 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strcmp(
 	const char *s1,
