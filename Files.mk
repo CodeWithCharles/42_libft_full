@@ -20,7 +20,7 @@ FILES	=																	\
 	libft/ft_memcpy libft/ft_memmove libft/ft_memset libft/ft_min			\
 	libft/ft_putchar_fd libft/ft_putendl_fd libft/ft_putnbr_fd				\
 	libft/ft_putnchr_fd libft/ft_putstr_fd libft/ft_split libft/ft_strcat	\
-	libft/ft_strchr libft/ft_strdup libft/ft_striteri libft/ft_strjoin		\
-	libft/ft_strlcat libft/ft_strlcpy libft/ft_strlen libft/ft_strmapi		\
-	libft/ft_strncmp libft/ft_strnstr libft/ft_strrchr libft/ft_strtrim		\
-	libft/ft_substr libft/ft_tolower libft/ft_toupper						\
+	libft/ft_strchr libft/ft_strcmp libft/ft_strdup libft/ft_striteri		\
+	libft/ft_strjoin libft/ft_strlcat libft/ft_strlcpy libft/ft_strlen		\
+	libft/ft_strmapi libft/ft_strncmp libft/ft_strnstr libft/ft_strrchr		\
+	libft/ft_strtrim libft/ft_substr libft/ft_tolower libft/ft_toupper		\
