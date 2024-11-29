@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 18:31:31 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/25 15:39:53 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:10:11 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void	ft_putnchr_fd(int fd, char c, int count);
 int		max(int a, int b);
 int		min(int a, int b);
 void	ft_strcat(char **dst_ptr, const char *src);
+int		ft_strcmp(const char *s1, const char *s2);
+
 // GNL
 
 char	*get_next_line(int fd);
