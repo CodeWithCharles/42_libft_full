@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 10:55:25 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/25 15:39:25 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/12/02 22:26:18 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	read_format(
 				const char **fmt_in_ptr);
 // Main function
 
-int	ft_printf_base(int fd, const char *format_in, va_list *args)
+int	ft_printf_base(const int fd, const char *format_in, va_list *args)
 {
 	int				printed_char;
 	t_spec_printer	printers[8];
@@ -75,7 +75,7 @@ static int	handle(
 	int				len;
 	const char		*start;
 
-	format.fd = fd;
+	format = (t_format){.fd = fd};
 	if (read_format(&format, fmt_in_ptr))
 	{
 		start = *fmt_in_ptr;
@@ -117,7 +117,6 @@ static int	read_format(
 {
 	char	*x;
 
-	ft_bzero(fmt, sizeof(t_format));
 	x = ft_strchr(FMT_FLAGS, *(*fmt_in_ptr));
 	while (x)
 	{
