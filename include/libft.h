@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 18:31:31 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/11/29 17:10:11 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/12/06 17:12:44 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int		max(int a, int b);
 int		min(int a, int b);
 void	ft_strcat(char **dst_ptr, const char *src);
 int		ft_strcmp(const char *s1, const char *s2);
+int		ft_atoi_base(const char *str, int base);
 
 // GNL
 
