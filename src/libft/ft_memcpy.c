@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 15:39:40 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/10/16 15:41:06 by cpoulain         ###   ########.fr       */
+/*   Updated: 2024/12/09 17:07:13 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,15 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if (!dest && !src)
+	size_t	i;
+
+	if (!dest || !src)
 		return (NULL);
-	while (n--)
-		((t_byte *)dest)[n] = ((t_byte *)src)[n];
+	i = 0;
+	while (i < n)
+	{
+		((t_byte *)dest)[i] = ((t_byte *)src)[i];
+		i++;
+	}
 	return (dest);
 }

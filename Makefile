@@ -6,7 +6,7 @@
 #    By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 16:58:14 by cpoulain          #+#    #+#              #
-#    Updated: 2024/11/19 11:59:05 by cpoulain         ###   ########.fr        #
+#    Updated: 2024/12/09 16:14:51 by cpoulain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJ_DIR			:=	build
 TARGET			:=	libftfull.a
 
 CC				:=	cc
-CFLAGS			:=	-Wall -Wextra -Werror
+CFLAGS			:=	-Wall -Wextra -Werror -g
 
 TEST_FILE		:=	test.c
 TEST_TARGET		:=	ft_test
