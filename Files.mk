@@ -18,10 +18,11 @@ FILES	=																	\
 	libft/ft_lstclear_bonus libft/ft_lstdelone_bonus libft/ft_lstiter_bonus	\
 	libft/ft_lstlast_bonus libft/ft_lstmap_bonus libft/ft_lstnew_bonus		\
 	libft/ft_lstsize_bonus libft/ft_max libft/ft_memchr libft/ft_memcmp		\
-	libft/ft_memcpy libft/ft_memmove libft/ft_memset libft/ft_min			\
-	libft/ft_putchar_fd libft/ft_putendl_fd libft/ft_putnbr_fd				\
-	libft/ft_putnchr_fd libft/ft_putstr_fd libft/ft_split libft/ft_strcat	\
-	libft/ft_strchr libft/ft_strcmp libft/ft_strdup libft/ft_striteri		\
-	libft/ft_strjoin libft/ft_strlcat libft/ft_strlcpy libft/ft_strlen		\
-	libft/ft_strmapi libft/ft_strncmp libft/ft_strnstr libft/ft_strrchr		\
-	libft/ft_strtrim libft/ft_substr libft/ft_tolower libft/ft_toupper		\
+	libft/ft_memcpy libft/ft_memmove libft/ft_memset libft/ft_memswap		\
+	libft/ft_min libft/ft_putchar_fd libft/ft_putendl_fd libft/ft_putnbr_fd	\
+	libft/ft_putnchr_fd libft/ft_putstr_fd libft/ft_qsort libft/ft_split	\
+	libft/ft_strcat libft/ft_strchr libft/ft_strcmp libft/ft_strdup			\
+	libft/ft_striteri libft/ft_strjoin libft/ft_strlcat libft/ft_strlcpy	\
+	libft/ft_strlen libft/ft_strmapi libft/ft_strncmp libft/ft_strnstr		\
+	libft/ft_strrchr libft/ft_strtrim libft/ft_substr libft/ft_tolower		\
+	libft/ft_toupper														\

@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 18:31:31 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/12/20 09:45:08 by cpoulain         ###   ########.fr       */
+/*   Updated: 2025/01/02 16:47:50 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef int				(*t_comparator)(void *, void *);
 
 int		ft_isspace(const char c);
 int		ft_isalpha(int c);
@@ -48,6 +50,7 @@ void	*ft_memset(void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	ft_memswap(void *_a, void *_b, size_t n);
 void	ft_bzero(void *s, size_t n);
 char	*ft_strdup(const char *s);
 void	*ft_calloc(size_t nmemb, size_t size);
@@ -72,6 +75,7 @@ char	*ft_dtoa(
 			double value,
 			int precision
 			);
+void	ft_qsort(void *base, size_t nmemb, size_t size, t_comparator cmp);
 
 // GNL
 
