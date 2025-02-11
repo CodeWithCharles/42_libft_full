@@ -10,19 +10,25 @@ FILES	=																	\
 	ft_printf/printers/integer_printer ft_printf/printers/lo_hex_printer	\
 	ft_printf/printers/pointer_printer ft_printf/printers/string_printer	\
 	ft_printf/printers/unsigned_printer ft_printf/printers/up_hex_printer	\
-	ft_printf/string_printer get_next_line/get_next_line libft/ft_atoi		\
-	libft/ft_atoi_base libft/ft_bzero libft/ft_calloc libft/ft_dtoa			\
-	libft/ft_isalnum libft/ft_isalpha libft/ft_isascii libft/ft_isdigit		\
-	libft/ft_isprint libft/ft_isspace libft/ft_itoa							\
-	libft/ft_lstadd_back_bonus libft/ft_lstadd_front_bonus					\
-	libft/ft_lstclear_bonus libft/ft_lstdelone_bonus libft/ft_lstiter_bonus	\
-	libft/ft_lstlast_bonus libft/ft_lstmap_bonus libft/ft_lstnew_bonus		\
-	libft/ft_lstsize_bonus libft/ft_max libft/ft_memchr libft/ft_memcmp		\
-	libft/ft_memcpy libft/ft_memmove libft/ft_memset libft/ft_memswap		\
-	libft/ft_min libft/ft_putchar_fd libft/ft_putendl_fd libft/ft_putnbr_fd	\
-	libft/ft_putnchr_fd libft/ft_putstr_fd libft/ft_qsort libft/ft_split	\
-	libft/ft_strcat libft/ft_strchr libft/ft_strcmp libft/ft_strdup			\
-	libft/ft_striteri libft/ft_strjoin libft/ft_strlcat libft/ft_strlcpy	\
-	libft/ft_strlen libft/ft_strmapi libft/ft_strncmp libft/ft_strnstr		\
-	libft/ft_strrchr libft/ft_strtrim libft/ft_substr libft/ft_tolower		\
-	libft/ft_toupper														\
+	ft_printf/string_printer get_next_line/get_next_line					\
+	libft/convert/ft_atoi libft/convert/ft_atoi_base libft/convert/ft_dtoa	\
+	libft/convert/ft_itoa libft/is/ft_isalnum libft/is/ft_isalpha			\
+	libft/is/ft_isascii libft/is/ft_isdigit libft/is/ft_isprint				\
+	libft/is/ft_isspace libft/lst/ft_lstadd_back_bonus						\
+	libft/lst/ft_lstadd_front_bonus libft/lst/ft_lstclear_bonus				\
+	libft/lst/ft_lstdelone_bonus libft/lst/ft_lstiter_bonus					\
+	libft/lst/ft_lstlast_bonus libft/lst/ft_lstmap_bonus					\
+	libft/lst/ft_lstnew_bonus libft/lst/ft_lstremove						\
+	libft/lst/ft_lstsize_bonus libft/mem/ft_bzero libft/mem/ft_calloc		\
+	libft/mem/ft_memchr libft/mem/ft_memcmp libft/mem/ft_memcpy				\
+	libft/mem/ft_memmove libft/mem/ft_memset libft/mem/ft_memswap			\
+	libft/put/ft_putchar_fd libft/put/ft_putendl_fd libft/put/ft_putnbr_fd	\
+	libft/put/ft_putnchr_fd libft/put/ft_putstr_fd libft/shell/ft_realpath	\
+	libft/sort/ft_qsort libft/str/ft_split libft/str/ft_strcat				\
+	libft/str/ft_strchr libft/str/ft_strcmp libft/str/ft_strdup				\
+	libft/str/ft_striteri libft/str/ft_strjoin libft/str/ft_strlcat			\
+	libft/str/ft_strlcpy libft/str/ft_strlen libft/str/ft_strmapi			\
+	libft/str/ft_strncmp libft/str/ft_strndup libft/str/ft_strnstr			\
+	libft/str/ft_strrchr libft/str/ft_strtrim libft/str/ft_substr			\
+	libft/utils/ft_max libft/utils/ft_min libft/utils/ft_tolower			\
+	libft/utils/ft_toupper													\

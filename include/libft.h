@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 18:31:31 by cpoulain          #+#    #+#             */
-/*   Updated: 2025/01/02 16:47:50 by cpoulain         ###   ########.fr       */
+/*   Updated: 2025/02/11 16:54:43 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,14 @@ int		max(int a, int b);
 int		min(int a, int b);
 void	ft_strcat(char **dst_ptr, const char *src);
 int		ft_strcmp(const char *s1, const char *s2);
+char	*ft_strndup(const char *s, size_t n);
 int		ft_atoi_base(const char *str, int base);
 char	*ft_dtoa(
 			double value,
 			int precision
 			);
 void	ft_qsort(void *base, size_t nmemb, size_t size, t_comparator cmp);
-
+void	ft_free_split(char ***split);
 // GNL
 
 char	*get_next_line(int fd);
@@ -98,5 +99,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void	ft_lstremove(t_list **lst, void (*del)());
 
 #endif

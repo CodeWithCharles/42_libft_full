@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpoulain <cpoulain@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 13:18:56 by cpoulain          #+#    #+#             */
-/*   Updated: 2024/10/17 14:38:30 by cpoulain         ###   ########.fr       */
+/*   Updated: 2025/02/11 16:51:50 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static size_t		count_strings(const char *s, char c);
 static void			free_strs(char ***strs, size_t len);
 static const char	*cpy_until_c(char **strs, const char *s, char c);
 
-/* ft_split */
+/* Headers implementations */
 
 char	**ft_split(const char *s, char c)
 {
@@ -40,6 +40,24 @@ char	**ft_split(const char *s, char c)
 		}
 	}
 	return (strs);
+}
+
+void	ft_free_split(
+	char ***split
+)
+{
+	int	i;
+
+	if (!(split) || !(*split))
+		return ;
+	i = 0;
+	while ((*split)[i])
+	{
+		free((*split)[i]);
+		(*split)[i++] = NULL;
+	}
+	free(*split);
+	(*split) = NULL;
 }
 
 /* Static definitions */
