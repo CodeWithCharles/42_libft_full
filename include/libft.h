@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 18:31:31 by cpoulain          #+#    #+#             */
-/*   Updated: 2025/02/11 16:54:43 by cpoulain         ###   ########.fr       */
+/*   Updated: 2025/02/11 17:00:55 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ char	*ft_dtoa(
 			);
 void	ft_qsort(void *base, size_t nmemb, size_t size, t_comparator cmp);
 void	ft_free_split(char ***split);
+char	*ft_realpath(const char *relative_path);
+
 // GNL
 
 char	*get_next_line(int fd);
