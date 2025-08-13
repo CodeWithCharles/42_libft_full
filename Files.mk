@@ -22,13 +22,13 @@ FILES	=																	\
 	libft/lst/ft_lstsize_bonus libft/mem/ft_bzero libft/mem/ft_calloc		\
 	libft/mem/ft_memchr libft/mem/ft_memcmp libft/mem/ft_memcpy				\
 	libft/mem/ft_memmove libft/mem/ft_memset libft/mem/ft_memswap			\
-	libft/put/ft_putchar_fd libft/put/ft_putendl_fd libft/put/ft_putnbr_fd	\
-	libft/put/ft_putnchr_fd libft/put/ft_putstr_fd libft/shell/ft_realpath	\
-	libft/sort/ft_qsort libft/str/ft_split libft/str/ft_strcat				\
-	libft/str/ft_strchr libft/str/ft_strcmp libft/str/ft_strdup				\
-	libft/str/ft_striteri libft/str/ft_strjoin libft/str/ft_strlcat			\
-	libft/str/ft_strlcpy libft/str/ft_strlen libft/str/ft_strmapi			\
-	libft/str/ft_strncmp libft/str/ft_strndup libft/str/ft_strnstr			\
-	libft/str/ft_strrchr libft/str/ft_strtrim libft/str/ft_substr			\
-	libft/utils/ft_max libft/utils/ft_min libft/utils/ft_tolower			\
-	libft/utils/ft_toupper													\
+	libft/mem/ft_realloc libft/put/ft_putchar_fd libft/put/ft_putendl_fd	\
+	libft/put/ft_putnbr_fd libft/put/ft_putnchr_fd libft/put/ft_putstr_fd	\
+	libft/shell/ft_realpath libft/sort/ft_qsort libft/str/ft_split			\
+	libft/str/ft_strcat libft/str/ft_strchr libft/str/ft_strcmp				\
+	libft/str/ft_strdup libft/str/ft_striteri libft/str/ft_strjoin			\
+	libft/str/ft_strlcat libft/str/ft_strlcpy libft/str/ft_strlen			\
+	libft/str/ft_strmapi libft/str/ft_strncmp libft/str/ft_strndup			\
+	libft/str/ft_strnstr libft/str/ft_strrchr libft/str/ft_strtrim			\
+	libft/str/ft_substr libft/utils/ft_max libft/utils/ft_min				\
+	libft/utils/ft_tolower libft/utils/ft_toupper							\
