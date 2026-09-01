@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cpoulain <cpoulain@student.42.fr>          +#+  +:+       +#+         #
+#    By: cpoulain <cpoulain@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 16:58:14 by cpoulain          #+#    #+#              #
-#    Updated: 2025/03/24 16:00:47 by cpoulain         ###   ########.fr        #
+#    Updated: 2026/09/01 16:56:57 by cpoulain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRC_DIR			:=	src
 INC_DIR			:=	include
 OBJ_DIR			:=	build
 
-TARGET			:=	libftfull.a
+TARGET			:=	libft.a
 
 CC				:=	cc
 CFLAGS			:=	-Wall -Wextra -Werror -fPIC -g
