@@ -6,7 +6,7 @@
 #    By: cpoulain <cpoulain@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 16:58:14 by cpoulain          #+#    #+#              #
-#    Updated: 2026/09/01 16:56:57 by cpoulain         ###   ########.fr        #
+#    Updated: 2026/09/04 17:42:36 by cpoulain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ OBJ_DIR			:=	build
 TARGET			:=	libft.a
 
 CC				:=	cc
-CFLAGS			:=	-Wall -Wextra -Werror -fPIC -g
+CFLAGS			:=	-Wall -Wextra -Werror -fPIC -O2 \
+	-fno-strict-aliasing -fno-tree-loop-distribute-patterns
 
 TEST_FILE		:=	test.c
 TEST_TARGET		:=	ft_test
